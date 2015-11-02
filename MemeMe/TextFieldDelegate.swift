@@ -21,11 +21,15 @@ class TextFieldDelegate: NSObject, UITextFieldDelegate {
         textField.text = ""
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
         if textField.text == "" {
             textField.text = emptyStringPlaceholder
         }
+        return true
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
     
