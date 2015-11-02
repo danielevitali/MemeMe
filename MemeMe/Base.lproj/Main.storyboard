@@ -58,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <barButtonItem title="Share" id="zm5-Ms-Mka">
+                                    <barButtonItem systemItem="action" id="zm5-Ms-Mka">
                                         <connections>
                                             <action selector="shareClick:" destination="BYZ-38-t0r" id="RA8-zf-A3P"/>
                                         </connections>

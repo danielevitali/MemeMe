@@ -102,14 +102,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        if self.view.frame.origin.y == 0 {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+        if view.frame.origin.y == 0 && bottomTextField.isFirstResponder() {
+            view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if self.view.frame.origin.y != 0 {
-            self.view.frame.origin.y = 0
+        if view.frame.origin.y != 0 {
+            view.frame.origin.y = 0
         }
     }
     
@@ -123,8 +123,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topBar.hidden = true
         bottomBar.hidden = true
 
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawViewHierarchyInRect(view.frame, afterScreenUpdates: true)
         let memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
