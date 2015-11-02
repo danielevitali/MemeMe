@@ -18,23 +18,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
-    let textFieldDelegate = TextFieldDelegate()
+    let bottomTextFieldDelegate = TextFieldDelegate(placeholder: "BOTTOM")
+    let topTextFieldDelegate = TextFieldDelegate(placeholder: "TOP")
     var meme: Meme?
+    var memedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextField.delegate = textFieldDelegate
-        bottomTextField.delegate = textFieldDelegate
+        topTextField.delegate = topTextFieldDelegate
+        bottomTextField.delegate = bottomTextFieldDelegate
         
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.blackColor(),
             NSForegroundColorAttributeName : UIColor.whiteColor(),
             NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName : 2
+            NSStrokeWidthAttributeName : -2
         ]
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        
+        topTextField.textAlignment = NSTextAlignment.Center
+        bottomTextField.textAlignment = NSTextAlignment.Center
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -42,6 +47,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         subscribeToKeyboardNotifications()
         
         if !UIImagePickerController.isSourceTypeAvailable(.Camera) && bottomBar.items!.count == 2 {
+            //Leaving the camera button visible might be misleading. So, hide/remove the button
             bottomBar.items!.removeLast()
         }
         if imageView.image == nil {
@@ -86,8 +92,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func subscribeToKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: bottomTextField)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: bottomTextField)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
@@ -126,20 +132,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func shareClick(sender: AnyObject) {
         
-        let memedImage = generateMemedImage()
+        memedImage = generateMemedImage()
         
-        let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        let activityViewController = UIActivityViewController(activityItems: [memedImage!], applicationActivities: nil)
         activityViewController.completionWithItemsHandler = { activity, success, items, error in
             if success {
-                self.save(items![0] as! UIImage)
+                self.save()
             }
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         presentViewController(activityViewController, animated: true, completion: nil)
     }
     
-    func save(memedImage: UIImage) {
-        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memeImage: memedImage)
+    func save() {
+        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memeImage: memedImage!)
     }
 }
 

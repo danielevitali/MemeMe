@@ -35,26 +35,27 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uD3-oT-RIz">
-                                <rect key="frame" x="0.0" y="44" width="600" height="512"/>
+                                <rect key="frame" x="0.0" y="72" width="600" height="484"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="40" y="107" width="321" height="385"/>
                                 </variation>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="v5H-pN-i4g">
-                                <rect key="frame" x="252" y="70" width="97" height="48"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="v5H-pN-i4g">
+                                <rect key="frame" x="0.0" y="122" width="600" height="60"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3vf-JT-KfW">
-                                <rect key="frame" x="252" y="491" width="97" height="48"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="3vf-JT-KfW">
+                                <rect key="frame" x="0.0" y="446" width="600" height="60"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mUF-Yo-EEG">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <barButtonItem title="Share" id="zm5-Ms-Mka">
@@ -71,21 +72,64 @@
                             <constraint firstItem="mUF-Yo-EEG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0FC-VT-2HT"/>
                             <constraint firstItem="uD3-oT-RIz" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" id="4HN-ab-dI4"/>
                             <constraint firstItem="uD3-oT-RIz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="5n1-4U-TUN"/>
+                            <constraint firstItem="v5H-pN-i4g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9p1-gp-P7Z"/>
                             <constraint firstItem="mUF-Yo-EEG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ACf-mE-Iyn"/>
+                            <constraint firstAttribute="trailing" secondItem="uD3-oT-RIz" secondAttribute="trailing" id="AqG-eN-px8"/>
+                            <constraint firstItem="v5H-pN-i4g" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" constant="50" id="HdZ-0s-TIB"/>
+                            <constraint firstItem="v5H-pN-i4g" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" constant="50" id="JkP-ke-upx"/>
+                            <constraint firstAttribute="trailing" secondItem="v5H-pN-i4g" secondAttribute="trailing" id="NgA-yU-U2z"/>
                             <constraint firstAttribute="trailing" secondItem="mUF-Yo-EEG" secondAttribute="trailing" id="PGF-qc-obb"/>
+                            <constraint firstItem="EN6-HI-L8V" firstAttribute="top" secondItem="uD3-oT-RIz" secondAttribute="bottom" id="Pg4-TJ-7Yq"/>
+                            <constraint firstAttribute="trailing" secondItem="uD3-oT-RIz" secondAttribute="trailing" id="R6S-kd-yIh"/>
+                            <constraint firstAttribute="trailing" secondItem="mUF-Yo-EEG" secondAttribute="trailing" id="RdD-av-7O4"/>
                             <constraint firstItem="mUF-Yo-EEG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Sa7-1e-avf"/>
+                            <constraint firstItem="mUF-Yo-EEG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TLL-1Z-OQU"/>
+                            <constraint firstItem="v5H-pN-i4g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TUT-qg-NsQ"/>
+                            <constraint firstItem="uD3-oT-RIz" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" id="VV1-FZ-bTa"/>
                             <constraint firstItem="EN6-HI-L8V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Yd9-oy-lbw"/>
+                            <constraint firstItem="v5H-pN-i4g" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" constant="22" id="b2F-Kb-q6N"/>
+                            <constraint firstItem="EN6-HI-L8V" firstAttribute="top" secondItem="uD3-oT-RIz" secondAttribute="bottom" id="cI6-j5-oII"/>
+                            <constraint firstItem="uD3-oT-RIz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d0a-RK-lBM"/>
                             <constraint firstItem="3vf-JT-KfW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dVA-Ff-Xn5"/>
                             <constraint firstAttribute="trailing" secondItem="3vf-JT-KfW" secondAttribute="trailing" id="dhb-2h-bbD"/>
                             <constraint firstItem="EN6-HI-L8V" firstAttribute="top" secondItem="uD3-oT-RIz" secondAttribute="bottom" id="h7p-1Q-mDp"/>
                             <constraint firstItem="EN6-HI-L8V" firstAttribute="top" secondItem="3vf-JT-KfW" secondAttribute="bottom" constant="50" id="hsQ-X2-idA"/>
+                            <constraint firstItem="uD3-oT-RIz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hyO-uk-h2e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EN6-HI-L8V" secondAttribute="trailing" constant="-20" id="lji-sV-X1Z"/>
                             <constraint firstItem="v5H-pN-i4g" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" constant="50" id="mw7-oU-NPo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EN6-HI-L8V" secondAttribute="bottom" id="pJ4-B5-UZf"/>
                             <constraint firstItem="v5H-pN-i4g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qTY-H9-Hof"/>
                             <constraint firstAttribute="trailing" secondItem="v5H-pN-i4g" secondAttribute="trailing" id="qkc-h9-qlF"/>
+                            <constraint firstItem="uD3-oT-RIz" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" id="s5m-OC-qZE"/>
+                            <constraint firstAttribute="trailing" secondItem="v5H-pN-i4g" secondAttribute="trailing" id="uDB-df-LTE"/>
+                            <constraint firstItem="uD3-oT-RIz" firstAttribute="top" secondItem="mUF-Yo-EEG" secondAttribute="bottom" constant="-28" id="vPr-AY-pV1"/>
+                            <constraint firstItem="mUF-Yo-EEG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="xeI-3N-54h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uD3-oT-RIz" secondAttribute="trailing" constant="-20" id="xf3-CF-d6y"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0FC-VT-2HT"/>
+                                <exclude reference="ACf-mE-Iyn"/>
+                                <exclude reference="PGF-qc-obb"/>
+                                <exclude reference="Sa7-1e-avf"/>
+                                <exclude reference="4HN-ab-dI4"/>
+                                <exclude reference="5n1-4U-TUN"/>
+                                <exclude reference="AqG-eN-px8"/>
+                                <exclude reference="VV1-FZ-bTa"/>
+                                <exclude reference="d0a-RK-lBM"/>
+                                <exclude reference="vPr-AY-pV1"/>
+                                <exclude reference="xf3-CF-d6y"/>
+                                <exclude reference="9p1-gp-P7Z"/>
+                                <exclude reference="HdZ-0s-TIB"/>
+                                <exclude reference="NgA-yU-U2z"/>
+                                <exclude reference="b2F-Kb-q6N"/>
+                                <exclude reference="mw7-oU-NPo"/>
+                                <exclude reference="qTY-H9-Hof"/>
+                                <exclude reference="qkc-h9-qlF"/>
+                                <exclude reference="cI6-j5-oII"/>
+                                <exclude reference="h7p-1Q-mDp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="bottomBar" destination="EN6-HI-L8V" id="cxo-gP-gin"/>
