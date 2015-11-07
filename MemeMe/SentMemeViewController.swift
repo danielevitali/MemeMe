@@ -28,6 +28,10 @@ class SentMemeViewController: UIViewController {
         performSegueWithIdentifier("createMemeSegue", sender: self)
     }
     
+    func editMeme(meme: Meme) {
+        performSegueWithIdentifier("createMemeSegue", sender: self)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "openMemeSegue" {
             let controller = segue.destinationViewController as! OpenMemeViewController

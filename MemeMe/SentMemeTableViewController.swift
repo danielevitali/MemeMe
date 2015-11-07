@@ -36,4 +36,16 @@ class SentMemeTableViewController: SentMemeViewController, UITableViewDelegate, 
         performSegueWithIdentifier("openMemeSegue", sender: self)
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (tableViewRowAction, indexPath) in
+            self.memes.removeAtIndex(indexPath.row)
+            self.memesTableView.reloadData()
+        })
+        let editAction = UITableViewRowAction(style: .Default, title: "Edit", handler: { (tableViewRowAction, indexPath) in
+            let memeToEdit = self.memes[indexPath.row]
+            self.editMeme(memeToEdit)
+        })
+        return [deleteAction, editAction]
+    }
+    
 }
