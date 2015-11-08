@@ -20,7 +20,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     
     let bottomTextFieldDelegate = TextFieldDelegate(placeholder: "BOTTOM")
     let topTextFieldDelegate = TextFieldDelegate(placeholder: "TOP")
-    var meme: Meme?
+    var editAtIndex: Int?
     var memedImage: UIImage?
     
     override func viewDidLoad() {
@@ -54,10 +54,13 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
             shareButton.enabled = false
         }
         
-        if let meme = meme {
+        if let editAtIndex = editAtIndex {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let meme = appDelegate.memes[editAtIndex]
             topTextField.text = meme.topText
             bottomTextField.text = meme.bottomText
             imageView.image = meme.image
+            shareButton.enabled = true
         }
     }
     
@@ -159,9 +162,12 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     func save() {
-        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memeImage: memedImage!)
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: imageView.image!, memeImage: memedImage!)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.memes.append(meme!)
+        if let editAtIndex = editAtIndex {
+            appDelegate.memes.removeAtIndex(editAtIndex)
+        }
+        appDelegate.memes.insert(meme, atIndex: 0)
         dismissModallyViewController()
     }
 }

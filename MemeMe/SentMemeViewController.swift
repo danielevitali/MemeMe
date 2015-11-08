@@ -12,7 +12,8 @@ import UIKit
 class SentMemeViewController: UIViewController {
     
     var memes: [Meme]!
-    var selectedMeme: Meme!
+    var selectedMeme: Meme?
+    var editMemeAtIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +29,8 @@ class SentMemeViewController: UIViewController {
         performSegueWithIdentifier("createMemeSegue", sender: self)
     }
     
-    func editMeme(meme: Meme) {
-        selectedMeme = meme
+    func editMeme(atIndex index: Int) {
+        editMemeAtIndex = index
         performSegueWithIdentifier("createMemeSegue", sender: self)
     }
     
@@ -40,9 +41,9 @@ class SentMemeViewController: UIViewController {
             controller.meme = selectedMeme
             break
         case  "createMemeSegue":
-            if selectedMeme != nil {
+            if let editMemeAtIndex = editMemeAtIndex {
                 let controller = segue.destinationViewController as! CreateMemeViewController
-                controller.meme = selectedMeme
+                controller.editAtIndex = editMemeAtIndex
             }
             break
         default: break
