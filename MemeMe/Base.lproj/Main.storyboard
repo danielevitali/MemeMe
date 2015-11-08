@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="-202" y="-589"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Memes-->
         <scene sceneID="JhG-HP-uh8">
             <objects>
-                <tableViewController id="Zkt-dX-rD6" customClass="SentMemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Memes" id="Zkt-dX-rD6" customClass="SentMemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="G49-bw-Pu1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,17 +128,17 @@
                     <connections>
                         <outlet property="memesTableView" destination="G49-bw-Pu1" id="KWW-R3-3TO"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="createMemeSegue" id="PuJ-Mb-lsj"/>
-                        <segue destination="9e7-iU-TD5" kind="showDetail" identifier="openMemeSegue" id="4pj-2T-hLN"/>
+                        <segue destination="9e7-iU-TD5" kind="show" identifier="openMemeSegue" action="showDetailViewController:sender:" id="Daa-Or-ZNe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B64-BV-RNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1560" y="-1133"/>
         </scene>
-        <!--Open Meme View Controller-->
+        <!--Show Meme-->
         <scene sceneID="64I-bi-sck">
             <objects>
-                <viewController id="9e7-iU-TD5" customClass="OpenMemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Show Meme" id="9e7-iU-TD5" customClass="OpenMemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cev-kK-8aF"/>
                         <viewControllerLayoutGuide type="bottom" id="4TV-vl-RmJ"/>
@@ -214,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="774" y="-222"/>
         </scene>
-        <!--Sent Meme Collection View Controller-->
+        <!--Memes-->
         <scene sceneID="AAG-0Q-ftx">
             <objects>
-                <collectionViewController id="bAy-8z-VPc" customClass="SentMemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Memes" id="bAy-8z-VPc" customClass="SentMemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Cnq-bv-nsG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
                         <outlet property="flowLayout" destination="88z-We-UB7" id="tUP-fW-8On"/>
                         <outlet property="memesCollection" destination="Cnq-bv-nsG" id="vWc-vb-Jcc"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="createMemeSegue" id="IPn-Lk-VSR"/>
-                        <segue destination="9e7-iU-TD5" kind="showDetail" identifier="openMemeSegue" id="nrI-Az-a3d"/>
+                        <segue destination="9e7-iU-TD5" kind="show" identifier="openMemeSegue" action="showDetailViewController:sender:" id="qld-cs-1yY"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="var-TE-cth" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +429,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="nrI-Az-a3d"/>
-        <segue reference="IPn-Lk-VSR"/>
+        <segue reference="PuJ-Mb-lsj"/>
+        <segue reference="Daa-Or-ZNe"/>
     </inferredMetricsTieBreakers>
 </document>

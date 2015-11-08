@@ -53,6 +53,12 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         if imageView.image == nil {
             shareButton.enabled = false
         }
+        
+        if let meme = meme {
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
+            imageView.image = meme.image
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
