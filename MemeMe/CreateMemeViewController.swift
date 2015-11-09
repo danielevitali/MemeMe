@@ -40,6 +40,21 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         
         topTextField.textAlignment = NSTextAlignment.Center
         bottomTextField.textAlignment = NSTextAlignment.Center
+        
+        
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if let editAtIndex = editAtIndex {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let meme = appDelegate.memes[editAtIndex]
+            topTextField.text = meme.topText
+            bottomTextField.text = meme.bottomText
+            imageView.image = meme.image
+            imageView.contentMode = .ScaleAspectFit
+            shareButton.enabled = true
+        }
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -54,14 +69,7 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
             shareButton.enabled = false
         }
         
-        if let editAtIndex = editAtIndex {
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            let meme = appDelegate.memes[editAtIndex]
-            topTextField.text = meme.topText
-            bottomTextField.text = meme.bottomText
-            imageView.image = meme.image
-            shareButton.enabled = true
-        }
+        
     }
     
     override func viewWillDisappear(animated: Bool) {

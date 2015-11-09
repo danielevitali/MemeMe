@@ -11,18 +11,22 @@ import UIKit
 
 class SentMemeViewController: UIViewController {
     
-    var memes: [Meme]!
+    var memes: [Meme]! {
+        get {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            return appDelegate.memes
+        }
+        set(newMemes) {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.memes = newMemes
+        }
+    }
     var selectedMeme: Meme?
     var editMemeAtIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .Plain, target: self, action: "createMeme")
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        memes = appDelegate.memes
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "createMeme")
     }
     
     func createMeme() {

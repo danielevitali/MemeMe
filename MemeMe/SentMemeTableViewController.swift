@@ -42,16 +42,13 @@ class SentMemeTableViewController: SentMemeViewController, UITableViewDelegate, 
             self.memesTableView.reloadData()
         })
         let editAction = UITableViewRowAction(style: .Default, title: "Edit", handler: { (tableViewRowAction, indexPath) in
-            let memeToEdit = self.memes[indexPath.row]
-            self.editMeme(memeToEdit)
+            self.editMeme(atIndex: indexPath.row)
         })
         return [deleteAction, editAction]
     }
     
     func deleteMeme(index: Int) {
         memes.removeAtIndex(index)
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.memes.removeAtIndex(index)
     }
     
 }
