@@ -226,22 +226,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.54504602030000004" green="0.66754889939999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="88z-We-UB7">
-                            <size key="itemSize" width="191" height="161"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="88z-We-UB7">
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="memeCollecionViewCell" reuseIdentifier="memeCollectionViewCell" id="Ikl-Mo-YuK" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="191" height="161"/>
+                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="191" height="161"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Pf-W24">
-                                            <rect key="frame" x="8" y="8" width="175" height="145"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DhU-Pf-W24">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
@@ -250,6 +250,12 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DhU-Pf-W24" secondAttribute="bottom" id="ARM-H3-SKN"/>
+                                    <constraint firstItem="DhU-Pf-W24" firstAttribute="top" secondItem="Ikl-Mo-YuK" secondAttribute="top" id="Ukr-5c-RLm"/>
+                                    <constraint firstAttribute="trailing" secondItem="DhU-Pf-W24" secondAttribute="trailing" id="nPp-31-kh9"/>
+                                    <constraint firstItem="DhU-Pf-W24" firstAttribute="leading" secondItem="Ikl-Mo-YuK" secondAttribute="leading" id="zAy-7s-MWV"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="memeImageView" destination="DhU-Pf-W24" id="DUG-In-hix"/>
                                 </connections>

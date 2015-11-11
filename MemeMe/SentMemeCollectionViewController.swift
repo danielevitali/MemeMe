@@ -14,21 +14,30 @@ class SentMemeCollectionViewController: SentMemeViewController, UICollectionView
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var memesCollection: UICollectionView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        calculateLayoutFlow(withWidth: view.frame.size.width, withHeight: view.frame.size.height)
+        memesCollection.reloadData()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        calculateLayoutFlow(withWidth: size.width, withHeight: size.height)
+    }
+    
+    private func calculateLayoutFlow(withWidth viewWidth: CGFloat, withHeight viewHeight: CGFloat) {
         let space: CGFloat = 3.0
-        let dimension = (view.frame.size.width - (6 * space)) / 3.0
+        var dimension: CGFloat
+        
+        if viewWidth < viewHeight {
+            dimension = (viewWidth - (2 * space)) / 3.0
+        } else {
+            dimension = (viewWidth - (4 * space)) / 5.0
+        }
         
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
-        flaw
         flowLayout.itemSize = CGSizeMake(dimension, dimension)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        memesCollection.reloadData()
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
