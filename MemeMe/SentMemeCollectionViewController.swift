@@ -22,7 +22,7 @@ class SentMemeCollectionViewController: SentMemeViewController, UICollectionView
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-        calculateLayoutFlow(withWidth: size.width, withHeight: size.height)
+        // calculateLayoutFlow(withWidth: size.width, withHeight: size.height)
     }
     
     private func calculateLayoutFlow(withWidth viewWidth: CGFloat, withHeight viewHeight: CGFloat) {

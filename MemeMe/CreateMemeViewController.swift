@@ -61,9 +61,8 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         
-        if !UIImagePickerController.isSourceTypeAvailable(.Camera) && bottomBar.items!.count == 2 {
-            //Leaving the camera button visible might be misleading. So, hide/remove the button
-            bottomBar.items!.removeLast()
+        if !UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            cameraButton.enabled = false
         }
         if imageView.image == nil {
             shareButton.enabled = false
@@ -175,12 +174,6 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
         if let editAtIndex = editAtIndex {
             appDelegate.memes.removeAtIndex(editAtIndex)
         }
-        appDelegate.memes.insert(meme, atIndex: 0)
-        appDelegate.memes.insert(meme, atIndex: 0)
-        appDelegate.memes.insert(meme, atIndex: 0)
-        appDelegate.memes.insert(meme, atIndex: 0)
-        appDelegate.memes.insert(meme, atIndex: 0)
-        appDelegate.memes.insert(meme, atIndex: 0)
         appDelegate.memes.insert(meme, atIndex: 0)
         dismissModallyViewController()
     }

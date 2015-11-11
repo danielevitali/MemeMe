@@ -323,7 +323,7 @@
                                             <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="cxD-iS-Weo"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" id="ECz-kY-0Rz">
+                                    <barButtonItem systemItem="camera" id="ECz-kY-0Rz">
                                         <connections>
                                             <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="c3a-C9-cZW"/>
                                         </connections>
