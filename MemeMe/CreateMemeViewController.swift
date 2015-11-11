@@ -176,6 +176,12 @@ class CreateMemeViewController: UIViewController, UIImagePickerControllerDelegat
             appDelegate.memes.removeAtIndex(editAtIndex)
         }
         appDelegate.memes.insert(meme, atIndex: 0)
+        appDelegate.memes.insert(meme, atIndex: 0)
+        appDelegate.memes.insert(meme, atIndex: 0)
+        appDelegate.memes.insert(meme, atIndex: 0)
+        appDelegate.memes.insert(meme, atIndex: 0)
+        appDelegate.memes.insert(meme, atIndex: 0)
+        appDelegate.memes.insert(meme, atIndex: 0)
         dismissModallyViewController()
     }
 }

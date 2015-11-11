@@ -48,6 +48,7 @@ class SentMemeViewController: UIViewController {
             if let editMemeAtIndex = editMemeAtIndex {
                 let controller = segue.destinationViewController as! CreateMemeViewController
                 controller.editAtIndex = editMemeAtIndex
+                self.editMemeAtIndex = nil
             }
             break
         default: break
