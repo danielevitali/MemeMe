@@ -21,12 +21,17 @@ class SentMemeViewController: UIViewController {
             appDelegate.memes = newMemes
         }
     }
-    var selectedMeme: Meme?
-    var editMemeAtIndex: Int?
+    
+    var memeAtIndex: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "createMeme")
+    }
+    
+    func showMeme(atIndex index: Int) {
+        memeAtIndex = index
+        performSegueWithIdentifier("showMemeSegue", sender: self)
     }
     
     func createMeme() {
@@ -34,21 +39,21 @@ class SentMemeViewController: UIViewController {
     }
     
     func editMeme(atIndex index: Int) {
-        editMemeAtIndex = index
+        memeAtIndex = index
         performSegueWithIdentifier("createMemeSegue", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         switch segue.identifier! {
-        case  "openMemeSegue":
+        case  "showMemeSegue":
             let controller = segue.destinationViewController as! OpenMemeViewController
-            controller.meme = selectedMeme
+            controller.memeAtIndex = memeAtIndex
             break
         case  "createMemeSegue":
-            if let editMemeAtIndex = editMemeAtIndex {
+            if let editMemeAtIndex = memeAtIndex {
                 let controller = segue.destinationViewController as! CreateMemeViewController
                 controller.editAtIndex = editMemeAtIndex
-                self.editMemeAtIndex = nil
+                self.memeAtIndex = nil
             }
             break
         default: break

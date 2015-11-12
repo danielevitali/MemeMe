@@ -129,7 +129,7 @@
                     <connections>
                         <outlet property="memesTableView" destination="G49-bw-Pu1" id="KWW-R3-3TO"/>
                         <segue destination="BYZ-38-t0r" kind="modal" identifier="createMemeSegue" id="PuJ-Mb-lsj"/>
-                        <segue destination="9e7-iU-TD5" kind="push" identifier="openMemeSegue" id="Daa-Or-ZNe"/>
+                        <segue destination="9e7-iU-TD5" kind="push" identifier="showMemeSegue" id="Daa-Or-ZNe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B64-BV-RNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,11 +193,12 @@
                     <navigationItem key="navigationItem" id="pUt-Y5-DRL"/>
                     <connections>
                         <outlet property="memeImageView" destination="f48-R2-LkB" id="Xt1-Kj-mK2"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="editMemeSegue" id="GVh-RL-iR2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXJ-JX-KIx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2503.5" y="-1133"/>
+            <point key="canvasLocation" x="2575" y="-1133"/>
         </scene>
         <!--Grid-->
         <scene sceneID="zAI-k0-YbT">
@@ -271,7 +272,7 @@
                         <outlet property="flowLayout" destination="88z-We-UB7" id="tUP-fW-8On"/>
                         <outlet property="memesCollection" destination="Cnq-bv-nsG" id="vWc-vb-Jcc"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="createMemeSegue" id="IPn-Lk-VSR"/>
-                        <segue destination="9e7-iU-TD5" kind="push" identifier="openMemeSegue" id="qld-cs-1yY"/>
+                        <segue destination="9e7-iU-TD5" kind="push" identifier="showMemeSegue" id="qld-cs-1yY"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="var-TE-cth" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -443,7 +444,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IPn-Lk-VSR"/>
         <segue reference="qld-cs-1yY"/>
+        <segue reference="GVh-RL-iR2"/>
     </inferredMetricsTieBreakers>
 </document>

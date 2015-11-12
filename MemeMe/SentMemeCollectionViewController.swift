@@ -54,8 +54,7 @@ class SentMemeCollectionViewController: SentMemeViewController, UICollectionView
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        selectedMeme = memes[indexPath.row]
-        performSegueWithIdentifier("openMemeSegue", sender: self)
+        showMeme(atIndex: indexPath.row)
     }
     
 }

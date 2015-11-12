@@ -32,8 +32,7 @@ class SentMemeTableViewController: SentMemeViewController, UITableViewDelegate, 
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedMeme = memes[indexPath.row]
-        performSegueWithIdentifier("openMemeSegue", sender: self)
+        showMeme(atIndex: indexPath.row)
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
